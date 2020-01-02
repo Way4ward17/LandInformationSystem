@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="945.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddLand.AddlandController">
+   <children>
+      <ScrollPane layoutX="-10.0" layoutY="-1.0" prefHeight="577.0" prefWidth="955.0">
+     
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1753.0" prefWidth="951.0">
+               <children>
+                  <TextField fx:id="a" layoutX="58.0" layoutY="140.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantor Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="217.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EKITI STATE GOVERNMENT">
+                     <font>
+                        <Font name="System Bold" size="45.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="317.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIHSTRY OF LAND, HIUSING AND URBAN DEVELOPMENT">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="296.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PHASE V, State Secretariat Complex, Ado-Ekiti, Ekiti State, Nigeria">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="a1" layoutX="58.0" layoutY="189.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantor Address">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2" layoutX="58.0" layoutY="239.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantor Occupation">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21" layoutX="58.0" layoutY="289.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantee Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a211" layoutX="58.0" layoutY="337.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantee Address">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a212" layoutX="58.0" layoutY="384.0" prefHeight="39.0" prefWidth="854.0" promptText="Guarantee Occupation">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213" layoutX="58.0" layoutY="430.0" prefHeight="39.0" prefWidth="854.0" promptText="Location of the property">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2131" layoutX="58.0" layoutY="476.0" prefHeight="39.0" prefWidth="854.0" promptText="Search Conducted By">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2132" layoutX="200.0" layoutY="522.0" prefHeight="39.0" prefWidth="712.0" promptText="Name">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133" layoutX="202.0" layoutY="568.0" prefHeight="39.0" prefWidth="710.0" promptText="Address">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21331" layoutX="201.0" layoutY="615.0" prefHeight="39.0" prefWidth="711.0" promptText="Phone">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213311" layoutX="58.0" layoutY="661.0" prefHeight="39.0" prefWidth="854.0" promptText="Size of the property">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312" layoutX="58.0" layoutY="707.0" prefHeight="39.0" prefWidth="854.0" promptText="Survey Pillar Number">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133121" layoutX="58.0" layoutY="755.0" prefHeight="39.0" prefWidth="854.0" promptText="Plan Number">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133122" layoutX="58.0" layoutY="803.0" prefHeight="39.0" prefWidth="854.0" promptText="Name and Address of marker">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133123" layoutX="58.0" layoutY="852.0" prefHeight="39.0" prefWidth="854.0" promptText="Nature of grant">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21331231" layoutX="58.0" layoutY="901.0" prefHeight="39.0" prefWidth="854.0" promptText="Length of grant">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21331232" layoutX="227.0" layoutY="948.0" prefHeight="39.0" prefWidth="685.0" promptText="From">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21331233" layoutX="58.0" layoutY="995.0" prefHeight="39.0" prefWidth="854.0" promptText="Date registered">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312331" layoutX="58.0" layoutY="1043.0" prefHeight="39.0" prefWidth="854.0" promptText="Registration Particulars">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312332" layoutX="58.0" layoutY="1090.0" prefHeight="39.0" prefWidth="854.0" promptText="Index Number">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312333" layoutX="58.0" layoutY="1137.0" prefHeight="39.0" prefWidth="854.0" promptText="Sheet Number if chartered">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312334" layoutX="58.0" layoutY="1183.0" prefHeight="39.0" prefWidth="854.0" promptText="File number if any">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133123341" layoutX="58.0" layoutY="1230.0" prefHeight="39.0" prefWidth="854.0" promptText="Any ecumbrances, if yes state particulars">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a2133123342" layoutX="58.0" layoutY="1278.0" prefHeight="39.0" prefWidth="854.0" promptText="Where search conducted">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a21331233421" layoutX="58.0" layoutY="1326.0" prefHeight="39.0" prefWidth="854.0" promptText="Report presented by">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="a213312334211" layoutX="230.0" layoutY="1374.0" prefHeight="39.0" prefWidth="682.0" promptText="Designation">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               <DatePicker fx:id="date" layoutX="58.0" layoutY="1423.0" prefHeight="39.0" prefWidth="855.0" promptText="Date of research" />
+               <TextField fx:id="a213312334212" layoutX="58.0" layoutY="1469.0" prefHeight="39.0" prefWidth="854.0" promptText="Receipt number">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </TextField>
+               <TextField fx:id="a2133123342121" layoutX="58.0" layoutY="1516.0" prefHeight="39.0" prefWidth="854.0" promptText="Registrar of title">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </TextField>
+               <TextField fx:id="a21331233421211" layoutX="59.0" layoutY="1562.0" prefHeight="39.0" prefWidth="854.0" promptText="Signature">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </TextField>
+               <TextField fx:id="a21331233421212" layoutX="59.0" layoutY="1610.0" prefHeight="39.0" prefWidth="854.0" promptText="Report collected by">
+                  <font>
+                     <Font size="15.0" />
+                  </font>
+               </TextField>
+               <JFXButton layoutX="230.0" layoutY="1682.0" prefHeight="35.0" prefWidth="446.0" style="-fx-background-color: green; -fx-background-radius: 10px;" text="Submit" textFill="WHITE">
+                  <font>
+                     <Font name="System Bold" size="15.0" />
+                  </font>
+               </JFXButton>
+               <Text fx:id="status" fill="#117200" layoutX="328.0" layoutY="1670.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <font>
+                     <Font name="System Bold" size="12.0" />
+                  </font>
+               </Text>
+               </children>
+            </AnchorPane>
+      
+      </ScrollPane>
+   </children>
+</AnchorPane>

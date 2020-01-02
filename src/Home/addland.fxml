@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="splashAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="285.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Home.AddlandController">
+   <children>
+      <AnchorPane layoutY="2.0" prefHeight="525.0" prefWidth="284.0">
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="284.0" style="-fx-border-color: black;">
+               <children>
+                  <ImageView fitHeight="543.0" fitWidth="282.0" layoutY="-2.0" opacity="0.49" pickOnBounds="true" smooth="false">
+                     <image>
+                        <Image url="@../images/regist.jpg" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane layoutX="-3.0" layoutY="68.0" prefHeight="64.0" prefWidth="284.0" style="-fx-background-color: white;" styleClass="card">
+                     <children>
+                        <Label layoutX="75.0" layoutY="19.0" text="Navigation">
+                           <font>
+                              <Font name="Book Antiqua Bold" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton layoutX="5.0" layoutY="170.0" onAction="#searchland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="SEARCH LAND">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="5.0" layoutY="245.0" onAction="#addland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="ADD LAND">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="5.0" layoutY="320.0" onAction="#grantform" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="GRANT FORM">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="5.0" layoutY="397.0" onAction="#exit" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="EXIT">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
