@@ -46,11 +46,23 @@ public class AddlandController implements Initializable {
     }
 
     @FXML
-    private void addland(ActionEvent event) {
+    private void addland(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("/ownership/owner.fxml"));
+        Stage stage  = new Stage(); 
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Search Form");
+        stage.show();
     }
 
     @FXML
-    private void grantform(ActionEvent event) {
+    private void grantform(ActionEvent event) throws IOException {
+         Parent root = FXMLLoader.load(getClass().getResource("/grant/grant.fxml"));
+        Stage stage  = new Stage(); 
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle("Search Form");
+        stage.show();
     }
 
     @FXML

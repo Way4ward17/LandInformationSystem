@@ -5,16 +5,24 @@
  */
 package ownership;
 
+import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import landinformationsystem.Javaconnect;
 
 /**
@@ -50,16 +58,65 @@ ResultSet rs;
     private DatePicker dob;
     @FXML
     private DatePicker datebought;
+    @FXML
+    private Text status;
+    @FXML
+    private TextField landidsearch;
+    @FXML
+    private TextField code;
+    @FXML
+    private JFXButton codee;
     /**
      * Initializes the controller class.
      */
+    String otp;
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         conn = Javaconnect.ConnecrDB();
+        landid.setText(Random());
+        code.setVisible(false);
+        codee.setVisible(false);
     }    
 
+ private String Random1(){
+        Random rd = new Random();
+       String t = ("LAND_"+rd.nextInt(99999999 + 1));
+       return t;
+    }
     @FXML
     private void searchMethod(ActionEvent event) {
+        try{
+            String sql = "select * from land where landid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, landidsearch.getText());
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                phone.setText(rs.getString(4));
+                code.setVisible(true);
+                codee.setVisible(true);
+                otp = Random1(); 
+                
+          try{
+            String sql1 = "insert into code (phonenumber, code) values (?,?)";
+            pstmt = conn.prepareStatement(sql1);
+            pstmt.setString(1, phone.getText());
+            pstmt.setString(2, otp );
+            pstmt.execute();
+                phone.setText(rs.getString(4));
+                code.setVisible(true);
+                codee.setVisible(true);
+                
+                sendMessage(phone.getText(),otp);
+                
+                
+             }catch(Exception e){
+            System.out.println(e);
+        }
+                
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     @FXML
@@ -82,11 +139,16 @@ ResultSet rs;
         pstmt.setString(11,occupation.getText());
         pstmt.setString(12,landid.getText());
         pstmt.execute();
+        status.setText(name.getText()+  " profile was created Successfully");
       }catch(Exception e){
           System.out.println(e);
       }
     }
-
+ private String Random(){
+        Random rd = new Random();
+       String t = ("LAND_ID"+rd.nextInt(99999999 + 1));
+       return t;
+    }
     @FXML
     private void updateMethod(ActionEvent event) {
         
@@ -103,6 +165,57 @@ status.setText(name.getText()+ "profile was update Successfully");
          }catch(Exception e){
              System.out.println(e);
          }
+    }
+
+    
+      private void sendMessage(String rec, String message) throws MalformedURLException, IOException{
+      URL a = new URL("https://www.smsmobile24.com/index.php?option=com_spc&comm=spc_api&username=Encrypt_File&password=ponmile23&sender=EKITI_Land&recipient="+rec+"&message="+URLEncoder.encode(message, "UTF-8")+"");
+        
+        URLConnection connect = a.openConnection();
+        try(InputStream is = connect.getInputStream()){}
+    }
+    
+    
+    @FXML
+    private void searchMethod2(ActionEvent event) {
+        try{
+            String sql = "select * from land where landid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, landidsearch.getText());
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                phone.setText(rs.getString(4));
+                code.setVisible(true);
+                codee.setVisible(true);
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        
+        
+        
+         try{
+            String sql = "select * from land where landid = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, landidsearch.getText());
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                address.setText(rs.getString(1));
+                size.setText(rs.getString(2));
+                name.setText(rs.getString(3));
+                phone.setText(rs.getString(4));
+                nok.setText(rs.getString(5));
+                ((TextField) datebought.getEditor()).setText(rs.getString(6));
+                permanentaddress.setText(rs.getString(7));
+                localgovernment.setText(rs.getString(8));
+                ((TextField) dob.getEditor()).setText(rs.getString(9));
+                  citizen.setText(rs.getString(10));
+                  occupation.setText(rs.getString(11));
+                  landid.setText(rs.getString(12));
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
     }
     
 }
