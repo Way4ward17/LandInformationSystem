@@ -17,6 +17,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Random;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -70,12 +72,21 @@ ResultSet rs;
      * Initializes the controller class.
      */
     String otp;
+    @FXML
+    private JFXButton sendOT;
+    @FXML
+    private JFXButton save;
+    @FXML
+    private JFXButton update;
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
         conn = Javaconnect.ConnecrDB();
         landid.setText(Random());
         code.setVisible(false);
         codee.setVisible(false);
+        sendOT.setVisible(false);
+        save.setVisible(false);
+        update.setVisible(false);
     }    
 
  private String Random1(){
@@ -95,6 +106,7 @@ ResultSet rs;
                 code.setVisible(true);
                 codee.setVisible(true);
                 otp = Random1(); 
+                System.out.println(otp);
                 
           try{
             String sql1 = "insert into code (phonenumber, code) values (?,?)";
@@ -103,10 +115,11 @@ ResultSet rs;
             pstmt.setString(2, otp );
             pstmt.execute();
                 phone.setText(rs.getString(4));
+                landid.setText(rs.getString(12));
                 code.setVisible(true);
                 codee.setVisible(true);
+                sendOT.setVisible(true);
                 
-                sendMessage(phone.getText(),otp);
                 
                 
              }catch(Exception e){
@@ -155,7 +168,7 @@ ResultSet rs;
          try{
 String sql = "UPDATE land SET landaddress ='"+address.getText()+"',landsize= '"+size.getText()+"' , name='"+name.getText()+"' , phone='"+phone.getText()+"', nok = '"+nok.getText()+"', dateofpurchase = '"+((TextField) datebought.getEditor()).getText()+"'"
         + ",parmanentaddress = '"+permanentaddress.getText()+"',localgovernment = '"+localgovernment.getText()+"',"
-+ "dob = '"+((TextField) dob.getEditor()).getText()+"',citizen = '"+citizen.getText()+"',occupation = '"+occupation.getText()+"' WHERE landid ='"+landid.getText()+"' ";
++ "dob = '"+((TextField) dob.getEditor()).getText()+"',citizen = '"+citizen.getText()+"',occupation = '"+occupation.getText()+"' WHERE landid ='"+landidsearch.getText()+"' ";
 
                              
      pstmt = conn.prepareStatement(sql);
@@ -177,29 +190,23 @@ status.setText(name.getText()+ "profile was update Successfully");
     
     
     @FXML
-    private void searchMethod2(ActionEvent event) {
-        try{
-            String sql = "select * from land where landid = ?";
-            pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, landidsearch.getText());
-            rs = pstmt.executeQuery();
-            if(rs.next()){
-                phone.setText(rs.getString(4));
-                code.setVisible(true);
-                codee.setVisible(true);
-            }
-        }catch(Exception e){
-            System.out.println(e);
-        }
-        
-        
+    private void searchMethod2(ActionEvent event) { 
         
          try{
-            String sql = "select * from land where landid = ?";
+            String sql = "select * from code where phonenumber = ? AND code = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, landidsearch.getText());
+            pstmt.setString(1, phone.getText());
+            pstmt.setString(2, code.getText());
             rs = pstmt.executeQuery();
             if(rs.next()){
+                
+                try{
+                String sqll = "select * from land where landid = ?";
+                pstmt = conn.prepareStatement(sqll);
+                pstmt.setString(1, landidsearch.getText());
+                rs = pstmt.executeQuery();
+                
+                if(rs.next()){
                 address.setText(rs.getString(1));
                 size.setText(rs.getString(2));
                 name.setText(rs.getString(3));
@@ -209,13 +216,32 @@ status.setText(name.getText()+ "profile was update Successfully");
                 permanentaddress.setText(rs.getString(7));
                 localgovernment.setText(rs.getString(8));
                 ((TextField) dob.getEditor()).setText(rs.getString(9));
-                  citizen.setText(rs.getString(10));
-                  occupation.setText(rs.getString(11));
-                  landid.setText(rs.getString(12));
+                citizen.setText(rs.getString(10));
+                occupation.setText(rs.getString(11));
+                landid.setText(rs.getString(12));
+                
+                }       
+                save.setVisible(true);
+                update.setVisible(true);
+                
+                }catch(Exception e){
+                System.out.println(e);
+                }
             }
         }catch(Exception e){
             System.out.println(e);
         }
+    }
+
+    @FXML
+    private void sendOTP(ActionEvent event) {
+    try {           
+        System.out.println(otp);
+        sendMessage(phone.getText(),otp);
+    } catch (IOException ex) {
+        System.out.println("Network Failure");
+        //Logger.getLogger(OwnerController.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
     
 }
