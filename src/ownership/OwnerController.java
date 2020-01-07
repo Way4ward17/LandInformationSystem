@@ -80,12 +80,10 @@ ResultSet rs;
     private JFXButton update;
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-        conn = Javaconnect.ConnecrDB();
-        landid.setText(Random());
+        conn = Javaconnect.ConnecrDB();    
         code.setVisible(false);
         codee.setVisible(false);
         sendOT.setVisible(false);
-        save.setVisible(false);
         update.setVisible(false);
     }    
 
@@ -105,27 +103,10 @@ ResultSet rs;
                 phone.setText(rs.getString(4));
                 code.setVisible(true);
                 codee.setVisible(true);
-                otp = Random1(); 
-                System.out.println(otp);
+                 sendOT.setVisible(true);
                 
-          try{
-            String sql1 = "insert into code (phonenumber, code) values (?,?)";
-            pstmt = conn.prepareStatement(sql1);
-            pstmt.setString(1, phone.getText());
-            pstmt.setString(2, otp );
-            pstmt.execute();
-                phone.setText(rs.getString(4));
-                landid.setText(rs.getString(12));
-                code.setVisible(true);
-                codee.setVisible(true);
-                sendOT.setVisible(true);
-                
-                
-                
-             }catch(Exception e){
-            System.out.println(e);
-        }
-                
+        
+           landid.setText(Random());        
             }
         }catch(Exception e){
             System.out.println(e);
@@ -156,6 +137,8 @@ ResultSet rs;
       }catch(Exception e){
           System.out.println(e);
       }
+   
+        landid.setText(Random());
     }
  private String Random(){
         Random rd = new Random();
@@ -235,7 +218,26 @@ status.setText(name.getText()+ "profile was update Successfully");
 
     @FXML
     private void sendOTP(ActionEvent event) {
+            otp = Random1(); 
+          try{
+            String sql1 = "insert into code (phonenumber, code) values (?,?)";
+            pstmt = conn.prepareStatement(sql1);
+            pstmt.setString(1, phone.getText());
+            pstmt.setString(2, otp );
+            pstmt.execute();
+                phone.setText(rs.getString(4));
+                landid.setText(rs.getString(12));
+                code.setVisible(true);
+                codee.setVisible(true);
+                sendOT.setVisible(true);
+                
+                
+                
+             }catch(Exception e){
+            System.out.println(e);
+        }
     try {           
+      
         System.out.println(otp);
         sendMessage(phone.getText(),otp);
     } catch (IOException ex) {

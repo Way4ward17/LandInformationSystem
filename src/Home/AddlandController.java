@@ -51,7 +51,7 @@ public class AddlandController implements Initializable {
         Stage stage  = new Stage(); 
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Search Form");
+        stage.setTitle("Land Form");
         stage.show();
     }
 
@@ -61,7 +61,7 @@ public class AddlandController implements Initializable {
         Stage stage  = new Stage(); 
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Search Form");
+        stage.setTitle("Grant Form");
         stage.show();
     }
 
