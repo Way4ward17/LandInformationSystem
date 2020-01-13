@@ -18,7 +18,7 @@
                         <Image url="@../images/regist.jpg" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutX="-3.0" layoutY="68.0" prefHeight="64.0" prefWidth="284.0" style="-fx-background-color: white;" styleClass="card">
+                  <AnchorPane layoutX="-3.0" layoutY="38.0" prefHeight="64.0" prefWidth="284.0" style="-fx-background-color: white;" styleClass="card">
                      <children>
                         <Label layoutX="43.0" layoutY="3.0" text="Navigation">
                            <font>
@@ -27,22 +27,27 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <JFXButton layoutX="5.0" layoutY="170.0" onAction="#searchland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="SEARCH LAND">
+                  <JFXButton layoutX="5.0" layoutY="133.0" onAction="#searchland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="SEARCH LAND">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="5.0" layoutY="245.0" onAction="#addland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="ADD LAND">
+                  <JFXButton layoutX="5.0" layoutY="201.0" onAction="#addland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="ADD LAND">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="5.0" layoutY="320.0" onAction="#grantform" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="GRANT FORM">
+                  <JFXButton layoutX="5.0" layoutY="270.0" onAction="#grantform" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="GRANT FORM">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="5.0" layoutY="397.0" onAction="#exit" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="EXIT">
+                  <JFXButton layoutX="5.0" layoutY="409.0" onAction="#exit" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="EXIT">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="5.0" layoutY="340.0" onAction="#yourland" prefHeight="45.0" prefWidth="273.0" style="-fx-background-color: white;" text="LANDS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
